@@ -133,11 +133,11 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 			List<T> nextList = baseService.search(dto, Integer.parseInt(pageNo + 1), pageSize, userContext);
 
 			if (list.size() == 0) {
+				res.setSuccess(false);
+				res.addMessage("Records Not Deleted Unsuccessfull");
+			} else {
 				res.setSuccess(true);
 				res.addMessage("Records Deleted Successfully");
-			} else {
-				res.setSuccess(false);
-				res.addMessage("Records Not Deleted Successfully");
 				res.addData(list);
 				res.addResult("nextListSize", nextList.size());
 			}
