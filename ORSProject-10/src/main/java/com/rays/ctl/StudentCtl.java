@@ -19,4 +19,15 @@ import com.rays.service.StudentServiceInt;
 @RequestMapping(value = "Student")
 public class StudentCtl extends BaseCtl<StudentForm, StudentDTO, StudentServiceInt> {
 
+	@Autowired
+	private CollegeServiceInt collegeService;
+
+	@GetMapping("preload")
+	public ORSResponse preload() {
+		ORSResponse res = new ORSResponse(true);
+		List<CollegeDTO> list = collegeService.search(new CollegeDTO(), userContext);
+		res.addResult("collegeList", list);
+		return res;
+	}
+
 }

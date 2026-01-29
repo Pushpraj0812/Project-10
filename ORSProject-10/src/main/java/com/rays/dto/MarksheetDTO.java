@@ -95,4 +95,9 @@ public class MarksheetDTO extends BaseDTO {
 	public String getTableName() {
 		return "Marksheet";
 	}
+
+	@Override
+	public String getValue() {
+		return null;
+	}
 }

@@ -51,4 +51,9 @@ public class RoleDTO extends BaseDTO {
 	public String getTableName() {
 		return "Role";
 	}
+
+	@Override
+	public String getValue() {
+		return name;
+	}
 }

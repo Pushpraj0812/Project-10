@@ -20,5 +20,21 @@ import com.rays.service.TimeTableServiceInt;
 @RestController
 @RequestMapping(value = "TimeTable")
 public class TimeTableCtl extends BaseCtl<TimeTableForm, TimeTableDTO, TimeTableServiceInt> {
-	
+
+	@Autowired
+	private CourseServiceInt courseService;
+
+	@Autowired
+	private SubjectServiceInt subjectService;
+
+	@GetMapping("preload")
+	public ORSResponse preload() {
+		ORSResponse res = new ORSResponse(true);
+		List<CourseDTO> list = courseService.search(new CourseDTO(), userContext);
+		List<SubjectDTO> list1 = subjectService.search(new SubjectDTO(), userContext);
+		res.addResult("courseList", list);
+		res.addResult("subjectList", list1);
+		return res;
+	}
+
 }

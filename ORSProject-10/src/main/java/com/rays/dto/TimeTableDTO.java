@@ -119,4 +119,9 @@ public class TimeTableDTO extends BaseDTO {
 	public String getTableName() {
 		return "TimeTable";
 	}
+
+	@Override
+	public String getValue() {
+		return null;
+	}
 }

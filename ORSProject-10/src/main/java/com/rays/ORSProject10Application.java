@@ -2,6 +2,9 @@ package com.rays;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class ORSProject10Application {
@@ -10,6 +13,18 @@ public class ORSProject10Application {
 
 		SpringApplication.run(ORSProject10Application.class, args);
 		System.out.println("spring boot application is start on http://localhost:8080");
+	}
 
+	@Bean
+	public WebMvcConfigurer corsConfig() {
+		WebMvcConfigurer w = new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("http://localhost:4200")
+						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS").allowedHeaders("*")
+						.allowCredentials(true);
+			}
+		};
+		return w;
 	}
 }

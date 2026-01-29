@@ -194,4 +194,9 @@ public class UserDTO extends BaseDTO {
 	public String getTableName() {
 		return "User";
 	}
+
+	@Override
+	public String getValue() {
+		return null;
+	}
 }

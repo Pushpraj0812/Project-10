@@ -73,4 +73,9 @@ public class SubjectDTO extends BaseDTO {
 	public String getTableName() {
 		return "Subject";
 	}
+
+	@Override
+	public String getValue() {
+		return name;
+	}
 }

@@ -19,4 +19,15 @@ import com.rays.service.StudentServiceInt;
 @RequestMapping(value = "Marksheet")
 public class MarksheetCtl extends BaseCtl<MarksheetForm, MarksheetDTO, MarksheetServiceInt> {
 
+	@Autowired
+	private StudentServiceInt studentService;
+
+	@GetMapping("preload")
+	public ORSResponse preload() {
+		ORSResponse res = new ORSResponse(true);
+		List<StudentDTO> list = studentService.search(new StudentDTO(), userContext);
+		res.addResult("studentList", list);
+		return res;
+	}
+
 }

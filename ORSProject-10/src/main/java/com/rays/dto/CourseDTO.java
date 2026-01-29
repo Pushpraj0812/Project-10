@@ -62,4 +62,9 @@ public class CourseDTO extends BaseDTO {
 	public String getTableName() {
 		return "Course";
 	}
+
+	@Override
+	public String getValue() {
+		return name;
+	}
 }

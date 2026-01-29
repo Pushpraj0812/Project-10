@@ -119,4 +119,9 @@ public class StudentDTO extends BaseDTO {
 	public String getTableName() {
 		return "Student";
 	}
+
+	@Override
+	public String getValue() {
+		return firstName + " " + lastName;
+	}
 }
