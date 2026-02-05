@@ -24,6 +24,17 @@ import { ServiceLocatorService } from './service-locator.service';
 import { AuthServiceService } from './auth-service.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserListComponent } from './user/user-list.component';
+import { CollegeListComponent } from './college/college-list.component';
+import { CourseListComponent } from './course/course-list.component';
+import { FacultyListComponent } from './faculty/faculty-list.component';
+import { MarksheetListComponent } from './marksheet/marksheet-list.component';
+import { RoleListComponent } from './role/role-list.component';
+import { StudentListComponent } from './student/student-list.component';
+import { SubjectListComponent } from './subject/subject-list.component';
+import { TimetableListComponent } from './timetable/timetable-list.component';
+import { DoctorComponent } from './doctor/doctor.component';
+import { DoctorListComponent } from './doctor/doctor-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +52,18 @@ import { FormsModule } from '@angular/forms';
     TimetableComponent,
     UserComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserListComponent,
+    CollegeListComponent,
+    CourseListComponent,
+    FacultyListComponent,
+    MarksheetListComponent,
+    RoleListComponent,
+    StudentListComponent,
+    SubjectListComponent,
+    TimetableListComponent,
+    DoctorComponent,
+    DoctorListComponent
   ],
   imports: [
     BrowserModule,
